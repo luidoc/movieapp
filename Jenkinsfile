@@ -1,14 +1,14 @@
 pipeline {
   environment {
-    imagename = "kevalnagda/flaskapp"
-    registryCredential = 'kevalnagda'
+    imagename = "luidoc/flaskapp"
+    registryCredential = 'luidoc'
     dockerImage = ''
   }
   agent any
   stages {
     stage('Cloning Git') {
       steps {
-        git([url: 'https://github.com/kevalnagda/movieapp.git', branch: 'main', credentialsId: 'kevalnagda'])
+        git([url: 'https://github.com/luidoc/movieapp.git', branch: 'main', credentialsId: 'luidoc'])
 
       }
     }

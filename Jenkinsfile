@@ -39,7 +39,8 @@ pipeline {
     stage('Deploy image on remote docker') {
       steps{
         sh "docker context use node2"
-        sh "docker run -d --name flaskapp $imagename:latest"
+        sh "docker run -d --name flaskapp -p 80:80 $imagename:latest"
+        sh "docker context use default"
       }
     }
   }
